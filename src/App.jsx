@@ -1,11 +1,17 @@
 import React from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
-import Home from './pages/Home'
+import UserDetails from './Components/UserDetails'
+import Userlist from './Components/Userlist'
+
 const App = () => {
   return (
-    <div className=''>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element = {<Userlist />} />
+        <Route path='/user/:id' element={<UserDetails />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
